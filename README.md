@@ -69,8 +69,8 @@ __Function 3 :__
     - Y set, type: `Array like`
     - proportion of training data  , type: `float`
     - proportion of test data , type: `float`
-    - proportion of validation data, type: `float`
-<br>
+    - proportion of validation data, type: `float`<br>
+
     __Outputs:__
     - X train set, type: `Array like`
     - y train, type: `Array like`
