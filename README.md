@@ -19,22 +19,23 @@ a bulleted list of the functions (and datasets if applicable) that will be inclu
 
 __Function 1 :__
 
-- `train_test_acc()` <br>
+- `train_test_acc()`
+<br>
     Takes in a dictionary of sklearn regressors or classifiers, train input samples `Xtrain` (input features) , test input samples `Xtest`, train target values `ytrain` and test target values `ytest` (continuous or categorical).
-    The function outputs a beautiful dataframe with train and test scores sorted from highest to lowest of the test scores and the variance. <br> <br>
+    The function outputs a beautiful dataframe with train and test scores, variance and ordered in ascending order of test scores.  <br>
 
     __Inputs:__  <br>
-	- Dictionary of ML classifiers,  format ->  ` dict{ key: char, value: ML model }`
+	- Dictionary of ML classifiers or regressors,  format ->  ` dict { key: char, value: ML model }`
                 where
                 - key : is the name of the classifier such as 'SVM','RandomForest','LogisticRegression'
-                - value : LogisticRegression(), RandomForest()
+                - value : SVC(), LogisticRegression(), RandomForest()
 	- X train set, type: `Array-like `
 	- Y train set, type: `Array-like`
 	- X test set, type: `Array-like `
 	- Y test set, type: `Array-like`
 
   __Outputs:__ <br>
-  - dataframe of training and test scores sorted by test score in descending order and the variance.
+  - dataframe of training and test scores sorted by test score in ascending order and the variance.
 
 
 __Function 2 :__
@@ -48,21 +49,21 @@ __Function 2 :__
   - Dictionary of ML classifiers,  format ->  ` dict{ key: char, value: ML model }`
                 where
                 - key : is the name of the classifier such as 'SVM','RandomForest','LogisticRegression'
-                - value : LogisticRegression(), RandomForest()
+                - value : SVC(), LogisticRegression(), RandomForest()
 	- X set, type: `Array-like `
 	- Y set, type: `Array-like`
 
   __Outputs:__<br>
 
-  - dataframe of training and test scores sorted by test score in descending order and the variance.
+  - dataframe of time taken for the fit and predict for each classifier or regressor input.
 
 __Function 3 :__
 
 - `split()`
 
-  The function splits the training input samples* `X`, and target values `y` (class labels in classification, real numbers in regression) into train, test and validation sets according to specified ratios.
+  The function splits the training input samples `X`, and target values `y` (class labels in classification, real numbers in regression) into train, test and validation sets according to specified proportions.
 
-    Outputs four `X` dataframes, one each for training, validation, test, and combined training and validation and four y arrays. <br>
+    Outputs four array like training, validation, test, and combined training and validation sets and four y arrays. <br>
 
     __Inputs:__
     - X set, type: `Array like `
