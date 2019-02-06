@@ -21,16 +21,13 @@ a bulleted list of the functions (and datasets if applicable) that will be inclu
 __Function 1 :__
 
 - `train_test_acc()`
-<br>
     Takes in a dictionary of sklearn regressors or classifiers, train input samples `Xtrain` (input features) , test input samples `Xtest`, train target values `ytrain` and test target values `ytest` (continuous or categorical).
     The function outputs a beautiful dataframe with train and test scores, variance and ordered in ascending order of test scores.  <br>
 
-  __Inputs:__  <br>
+  __Inputs:__
 
-	- Dictionary of ML classifiers or regressors,  format ->  ` dict { key: char, value: ML model }` <br>
-                where<br>
-                - key : is the name of the classifier such as 'SVM','RandomForest','LogisticRegression'
-                - value : SVC(), LogisticRegression(), RandomForest() <br>
+
+    - Dictionary of ML classifiers or regressors.
 	- X train set, type: `Array-like `
 	- Y train set, type: `Array-like`
 	- X test set, type: `Array-like `
@@ -49,10 +46,7 @@ __Function 2 :__
 
   __Inputs:__   
 
-  - Dictionary of ML classifiers,  format ->  ` dict{ key: char, value: ML model }`
-                where
-                - key : is the name of the classifier such as 'SVM','RandomForest','LogisticRegression'
-                - value : SVC(), LogisticRegression(), RandomForest()
+    - Dictionary of ML classifiers or regressors.
 	- X set, type: `Array-like `
 	- Y set, type: `Array-like`
 
