@@ -26,16 +26,18 @@ __Function 1 :__
     The function outputs a beautiful dataframe with train and test scores, variance and ordered in ascending order of test scores.  <br>
 
   __Inputs:__  <br>
-	- Dictionary of ML classifiers or regressors,  format ->  ` dict { key: char, value: ML model }`
-                where
+
+	- Dictionary of ML classifiers or regressors,  format ->  ` dict { key: char, value: ML model }` <br>
+                where<br>
                 - key : is the name of the classifier such as 'SVM','RandomForest','LogisticRegression'
-                - value : SVC(), LogisticRegression(), RandomForest()
+                - value : SVC(), LogisticRegression(), RandomForest() <br>
 	- X train set, type: `Array-like `
 	- Y train set, type: `Array-like`
 	- X test set, type: `Array-like `
 	- Y test set, type: `Array-like`
 
   __Outputs:__ <br>
+
   - dataframe of training and test scores sorted by test score in ascending order and the variance.
 
 
@@ -85,8 +87,6 @@ __Function 3 :__
 
 ### Where does this package fit in?
 
-a paragraph describing where your packages fit into the Python and R ecosystems 
-(are there any other Python or R software packages that have the same/similar functionality? 
+a paragraph describing where your packages fit into the Python and R ecosystems
+(are there any other Python or R software packages that have the same/similar functionality?
 Provide links to any that do. if none exist, then clearly state this as well).
-
-
