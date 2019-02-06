@@ -1,3 +1,4 @@
+
 # SklearncomPYre
 Regression and Classification model comparison wrapper around scikit-learn
 
@@ -82,8 +83,10 @@ __Function 3 :__
     - X test set, type: `Array like`
     - y test, type: `Array like`
 
-
-
 ### Where does this package fit in?
 
-a paragraph describing where your packages fit into the Python and R ecosystems (are there any other Python or R software packages that have the same/similar functionality? Provide links to any that do. if none exist, then clearly state this as well).
+a paragraph describing where your packages fit into the Python and R ecosystems 
+(are there any other Python or R software packages that have the same/similar functionality? 
+Provide links to any that do. if none exist, then clearly state this as well).
+
+
