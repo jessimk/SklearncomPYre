@@ -21,21 +21,20 @@ a bulleted list of the functions (and datasets if applicable) that will be inclu
 __Function 1 :__
 
 - `train_test_acc()`
-<br>
     Takes in a dictionary of sklearn regressors or classifiers, train input samples `Xtrain` (input features) , test input samples `Xtest`, train target values `ytrain` and test target values `ytest` (continuous or categorical).
     The function outputs a beautiful dataframe with train and test scores, variance and ordered in ascending order of test scores.  <br>
 
-    __Inputs:__  <br>
-	- Dictionary of ML classifiers or regressors,  format ->  ` dict { key: char, value: ML model }`
-                where
-                - key : is the name of the classifier such as 'SVM','RandomForest','LogisticRegression'
-                - value : SVC(), LogisticRegression(), RandomForest()
+  __Inputs:__
+
+
+    - Dictionary of ML classifiers or regressors.
 	- X train set, type: `Array-like `
 	- Y train set, type: `Array-like`
 	- X test set, type: `Array-like `
 	- Y test set, type: `Array-like`
 
   __Outputs:__ <br>
+
   - dataframe of training and test scores sorted by test score in ascending order and the variance.
 
 
@@ -47,10 +46,7 @@ __Function 2 :__
 
   __Inputs:__   
 
-  - Dictionary of ML classifiers,  format ->  ` dict{ key: char, value: ML model }`
-                where
-                - key : is the name of the classifier such as 'SVM','RandomForest','LogisticRegression'
-                - value : SVC(), LogisticRegression(), RandomForest()
+    - Dictionary of ML classifiers or regressors.
 	- X set, type: `Array-like `
 	- Y set, type: `Array-like`
 
@@ -85,8 +81,6 @@ __Function 3 :__
 
 ### Where does this package fit in?
 
-a paragraph describing where your packages fit into the Python and R ecosystems 
-(are there any other Python or R software packages that have the same/similar functionality? 
+a paragraph describing where your packages fit into the Python and R ecosystems
+(are there any other Python or R software packages that have the same/similar functionality?
 Provide links to any that do. if none exist, then clearly state this as well).
-
-
