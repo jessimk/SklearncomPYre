@@ -24,7 +24,7 @@ __Function 1 :__
     Takes in a dictionary of sklearn regressors or classifiers, train input samples `Xtrain` (input features) , test input samples `Xtest`, train target values `ytrain` and test target values `ytest` (continuous or categorical).
     The function outputs a beautiful dataframe with train and test scores, variance and ordered in ascending order of test scores.  <br>
 
-    __Inputs:__  <br>
+  __Inputs:__  <br>
 	- Dictionary of ML classifiers or regressors,  format ->  ` dict { key: char, value: ML model }`
                 where
                 - key : is the name of the classifier such as 'SVM','RandomForest','LogisticRegression'
