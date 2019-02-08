@@ -11,15 +11,15 @@
 
 ### Summary
 
-A `python` package facilitating beautifully efficient comparisons of machine learning classifiers and models.
+A `python` package facilitating beautifully efficient comparisons of machine learning classifiers and regression models.
 
-__SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">scikit-learn</a>, combining it with <a href="https://pandas.pydata.org/">pandas</a> dataframes for easy, breezy, and beautiful machine learning model and classifier exploration. 
+__SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">scikit-learn</a>, combining it with <a href="https://pandas.pydata.org/">pandas</a> dataframes for easy, breezy, and beautiful machine learning regressor and classifier exploration.
 
 __Function 1 :__
 
 - `train_test_acc()`
-    Takes in a dictionary of sklearn regressors or classifiers, train input samples `Xtrain` (input features) , test input samples `Xtest`, train target values `ytrain` and test target values `ytest` (continuous or categorical).
-    The function outputs a beautiful dataframe with train and test scores, variance and ordered in ascending order of test scores.  <br>
+    Takes in a dictionary of sklearn regressors or classifiers along with input train samples `Xtrain` (input features) , input test samples `Xtest`, target train values `ytrain` and target test values `ytest` (continuous or categorical).
+    The function outputs a beautiful dataframe with train and test scores, variance and is ordered in ascending order of test scores.  <br>
 
   __Inputs:__
 
@@ -32,13 +32,13 @@ __Function 1 :__
 
   __Outputs:__ <br>
 
-  - dataframe of training and test scores sorted by test score in ascending order and the variance.
+  - DataFrame of training and test scores sorted by test score in ascending order and the variance.
 
 
 __Function 2 :__
 
 - `train_test_time()`  <br>
-  The function creates a comparison of time it takes to fit and predict using different models. It takes in a dictionary of sklearn regressors or classifiers, training input samples `X`, and target values `y` (class labels in classification, real numbers in regression). <br>
+  The function creates a comparison of time it takes to fit and predict using different models. It takes in a dictionary of sklearn regressors or classifiers along with input training samples `X`, and target values `y` (class labels in classification, real numbers in regression). <br>
   Outputs a beautiful dataframe with the time it takes for each model to fit and predict. <br>
 
   __Inputs:__   
@@ -60,14 +60,14 @@ __Function 3 :__
     Outputs four array like training, validation, test, and combined training and validation sets and four y arrays. <br>
 
     __Inputs:__
-    - X set, type: `Array like `
-    - Y set, type: `Array like`
+    - X data set, type: `Array like `
+    - Y data set, type: `Array like`
     - proportion of training data  , type: `float`
     - proportion of test data , type: `float`
     - proportion of validation data, type: `float`<br>
 
     __Outputs:__  
-    
+
     - X train set, type: `Array like`
     - y train, type: `Array like`
     - X validation set, type: `Array like`
@@ -81,7 +81,7 @@ __Function 3 :__
 
 This package provides functions to help make the early stages of model selection and exploration easier to cycle through and meaningfully compare.
 
-Our idea for this package was to facilitate the comparison of machine learning classifiers and models. Our inspiration came from <a href="https://ubc-mds.github.io/descriptions/">UBC MDS DSCI 573</a> lab assignments where we learned to combine python's `sci-kit learn` with `pandas` in order to produce interpretable comparisons of train and test accuracies and time efficiencies across models. 
+Our idea for this package was to facilitate the comparison of machine learning classifiers and models. Our inspiration came from <a href="https://ubc-mds.github.io/descriptions/">UBC MDS DSCI 573</a> lab assignments where we learned to combine python's `sci-kit learn` with `pandas` in order to produce interpretable comparisons of train and test accuracies and time efficiencies across models.
 
 We are not currently aware of any packages that combine `sci-kit learn` and `pandas` for efficient and interpretable model-to-model comparisons. We expect that this combination is used in practice and after having used it while learning machine learning techniques during our UBC MDS coursework, we thought it would be a good combination of tools to formally package together.   
 
