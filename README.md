@@ -1,4 +1,3 @@
-
 # SklearncomPYre
 
 
@@ -8,74 +7,74 @@
 | Jes Simkin | [jessimk](https://github.com/jessimk) | jess354 |
 | Talha Siddiqui | [talhaadnan100](https://github.com/talhaadnan100) | talhaas |
 
-
 ### Summary
 
 A `python` package facilitating beautifully efficient comparisons of machine learning classifiers and regression models.
 
 __SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">scikit-learn</a>, combining it with <a href="https://pandas.pydata.org/">pandas</a> dataframes for easy, breezy, and beautiful machine learning regressor and classifier exploration.
 
-__Function 1 :__
+#### Function 1 :
 
-- `train_test_acc()`
-    Takes in a dictionary of sklearn regressors or classifiers along with input train samples `Xtrain` (input features) , input test samples `Xtest`, target train values `ytrain` and target test values `ytest` (continuous or categorical).
-    The function outputs a beautiful dataframe with train and test scores, variance and is ordered in ascending order of test scores.  <br>
+- `train_test_acc_time()`
+    The purpose of this function is to compare different sklearn regressors or classifiers in terms of training and test accuracies, and the time it takes to fit and predict. The function inputs are dictionary of models, input train samples `Xtrain`(input features), input test samples `Xtest`, target train values `ytrain` and target test values `ytest` (continuous or categorical).
+    The function outputs a beautiful dataframe with training & test scores, model variance, and the time it takes to fit and predict using different models.  <br>
 
   __Inputs:__
 
-
     - Dictionary of ML classifiers or regressors.
-	- X train set, type: `Array-like `
-	- Y train set, type: `Array-like`
-	- X test set, type: `Array-like `
-	- Y test set, type: `Array-like`
+    - X train set, type: `Array-like `
+    - Y train set, type: `Array-like`
+    - X test set, type: `Array-like `
+    - Y test set, type: `Array-like`
 
-  __Outputs:__ <br>
+  __Outputs:__
 
-  - DataFrame of training and test scores sorted by test score in ascending order and the variance.
+  - Dataframe with 7 columns: (1) regressor or classifier name, (2) training accuracy, (3) test accuracy, (4) model variance, (5) time it takes to fit, (6) time it takes to predict and (7) total time. The dataframe will be sorted by test score in descending order.
 
 
-__Function 2 :__
+#### Function 2 :
 
-- `train_test_time()`  <br>
-  The function creates a comparison of time it takes to fit and predict using different models. It takes in a dictionary of sklearn regressors or classifiers along with input training samples `X`, and target values `y` (class labels in classification, real numbers in regression). <br>
-  Outputs a beautiful dataframe with the time it takes for each model to fit and predict. <br>
+- `comparison_viz()`
+
+  The purpose of this function is to visualize the output of `train_test_acc_time()` for easy communication and interpretation. The user has the choice to visualize a comparison of accuracies or time. It takes in a dataframe with 7 attributes i.e. model name, training & test scores, model variance, and the time it takes to fit, predict and total time.
+
+  Outputs a beautiful <a href="https://matplotlib.org">matplotlib</a> bar chart comparison of different models' training and test scores or the time it takes to fit and predict.
 
   __Inputs:__   
 
-    - Dictionary of ML classifiers or regressors.
-	- X set, type: `Array-like `
-	- Y set, type: `Array-like`
+  - Dataframe with 7 columns: (1) regressor or classifier name, (2) training accuracy, (3) test accuracy, (4) model variance, (5) time it takes to fit, (6) time it takes to predict and (7) total time. Type: `pandas.Dataframe`
+  - Choice of `accuracy` or `time`. Type: `string`
 
-  __Outputs:__<br>
+  __Outputs:__
 
-  - dataframe of time taken for the fit and predict for each classifier or regressor input.
+  - Bar chart of accuracies or time comparison by models saved to root directory. Type: `png`
 
-__Function 3 :__
+#### Function 3 :
 
 - `split()`
 
   The function splits the training input samples `X`, and target values `y` (class labels in classification, real numbers in regression) into train, test and validation sets according to specified proportions.
 
-    Outputs four array like training, validation, test, and combined training and validation sets and four y arrays. <br>
+  Outputs four array like training, validation, test, and combined training and validation sets and four y arrays. <br>
 
-    __Inputs:__
-    - X data set, type: `Array like `
-    - Y data set, type: `Array like`
-    - proportion of training data  , type: `float`
-    - proportion of test data , type: `float`
-    - proportion of validation data, type: `float`<br>
+  __Inputs:__
 
-    __Outputs:__  
+  - X data set, type: `Array like `
+  - Y data set, type: `Array like`
+  - proportion of training data  , type: `float`
+  - proportion of test data , type: `float`
+  - proportion of validation data, type: `float`<br>
 
-    - X train set, type: `Array like`
-    - y train, type: `Array like`
-    - X validation set, type: `Array like`
-    - y validation, type: `Array like`
-    - X train and validation set, type: `Array like`
-    - y train and validation, type: `Array like`
-    - X test set, type: `Array like`
-    - y test, type: `Array like`
+  __Outputs:__  
+
+  - X train set, type: `Array like`
+  - y train, type: `Array like`
+  - X validation set, type: `Array like`
+  - y validation, type: `Array like`
+  - X train and validation set, type: `Array like`
+  - y train and validation, type: `Array like`
+  - X test set, type: `Array like`
+  - y test, type: `Array like`
 
 ### Where does this package fit in?
 
