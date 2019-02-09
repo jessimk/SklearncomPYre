@@ -26,16 +26,16 @@ Example of a contributing workflow :
 `git remote add origin <original_repo_URL>`
 
 ##### Pull the latest changes in the master branch
-`git pull origin/master`
+`git pull origin master`
 
 
-####To submit changes
+#### To submit changes
 
-`git add .`
-`git commit <meaningful message>`
-`git push`
+`git add .` <br>
+`git commit <meaningful message>` <br>
+`git push` <br>
 
 Once the changes are pushed to your local repository  submit pull request to master repository.
 
-####Attributions 
+#### Attributions
 Inspired by : [thoughtbot](https://github.com/thoughtbot/factory_bot_rails/blob/master/CONTRIBUTING.md)
