@@ -6,6 +6,8 @@
 
 def train_test_acc_time(models,X_train,y_train,X_test,y_test):
     
+	
+	
     """
     
     The purpose of this function is to compare different sklearn regressors or classifiers in terms 
@@ -41,5 +43,5 @@ def train_test_acc_time(models,X_train,y_train,X_test,y_test):
      """
     
     
-    return (result)
+    pass
 
