@@ -34,6 +34,4 @@ def comparison_viz(comparison, choice):
       - Bar chart of accuracies or time comparison by models. Type: `png` 
                     
         """
-    
-    
-
+    pass
