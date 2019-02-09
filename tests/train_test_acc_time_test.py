@@ -35,7 +35,8 @@ def test_dict_type():
         train_test_acc_time(55, X_train, y_train, X_test, y_test)    
         train_test_acc_time([1,2,3], X_train, y_train, X_test, y_test)    
         train_test_acc_time((4,44,5), X_train, y_train, X_test, y_test)                                   
-                                                                 
+ 
+# Checking the input types for X_train, y_train, X_test, y_test
 def test_X_array_type():
     with pytest.raises(TypeError):
         train_test_acc_time(dictionary, np.array([1,2,3]), y_train, X_test, y_test)
@@ -44,26 +45,20 @@ def test_X_array_type():
         train_test_acc_time(dictionary, X_train,y_train, (7,8,9), y_test)
 
  
-# Output type test for the function
+# Output type test for the function. The output should be a DataFrame
 def test_output_type():
     result_dataframe = train_test_acc_time(dictionary, X_train, y_train, X_test, y_test)
     assert(type(result_dataframe) == int), "The type of output  is not DataFrame"
     assert(type(result_dataframe) == list), "The type of output is not DataFrame"
     assert(type(result_dataframe.iloc[:,1]) != pd.core.series.Series), "The type the second column is not Series"
 
-    # output columns number check 
+    # output columns number check , The output should have 7 columns corresponding to accuracies and time taken.
 def test_output_dimension():
     result_dataframe = train_test_acc_time(dictionary, X_train, y_train, X_test, y_test)
     assert(result_dataframe.shape[1] !=7), "The number of columns in output DataFrame should be 7 "
-
-
-def test_output_dimension():
-    result_dataframe = train_test_acc_time(dictionary, X_train, y_train, X_test, y_test)
-    assert(result_dataframe.shape[1] !=7), "The number of columns in output DataFrame should be 7 "
-        
- # test all inputs are given 
+  
+ # test all inputs are given (dictionary, X_train, y_train, X_test, y_test) otherwise there will be an error
 def test_inputs_given():
     with pytest.raises(ValueError):
         train_test_acc_time(dictionary,  y_train, X_test, y_test)
             
-
