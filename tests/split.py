@@ -37,3 +37,8 @@ def test_output_col_dimension():
 
     assert(X_test.shape[1] != X.shape[1]), "For X_train, the number of columns in the ouput should be the same as the input"
     assert(y_test.shape[1] != y.shape[1]), "For X_train, the number of columns in the ouput should be the same as the input"
+
+#testing that there are 8 output dataframes
+def test_output_total():
+    a = [split.split(X,y,0.6,0.2,0.2)]
+    assert( len(a) != 8), "missing outputs, there should be 8 dataframes"
