@@ -70,3 +70,9 @@ def comparison_viz(comparison, choice):
     fig.tight_layout()
 
     plt.savefig('comparison.png', bbox_inches='tight')
+
+parser = argparse.ArgumentParser()
+parser.add_argument("comparison", help="Output of train_test_acc_time()")
+parser.add_argument("choice", help="accuracy or time", type=str)
+args = parser.parse_args()
+square_root(args.comparison, args.choice)
