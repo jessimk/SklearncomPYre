@@ -75,4 +75,5 @@ parser = argparse.ArgumentParser()
 parser.add_argument("comparison", help="Output of train_test_acc_time()")
 parser.add_argument("choice", help="accuracy or time", type=str)
 args = parser.parse_args()
-square_root(args.comparison, args.choice)
+
+comparison_viz(args.comparison, args.choice)

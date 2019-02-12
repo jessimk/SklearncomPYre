@@ -4,7 +4,7 @@ import pandas as pd
 import pytest
 import matplotlib as plt
 
-sys.path.append("../functions")
+sys.path.insert(0, os.path.abspath("../SklearncomPYre"))
 
 import comparison_viz
 
