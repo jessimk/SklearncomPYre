@@ -1,4 +1,6 @@
 {
+  "split.py::test_inputs_given": true,
+  "split.py::test_output_col_dimension": true,
   "train_test_acc_time_test.py::test_X_array_type": true,
   "train_test_acc_time_test.py::test_dict_type": true,
   "train_test_acc_time_test.py::test_inputs_given": true,
