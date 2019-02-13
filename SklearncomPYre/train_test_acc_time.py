@@ -45,7 +45,7 @@ def train_test_acc_time(models,X_train,y_train,X_test,y_test):
 
     """
     #initializing an empty results dictionary, an empty list and an empty dataframe
-    results_dict = {'Classifier':[],
+    results_dict = {'Model':[],
         'Train Accuracy':[],
         'Test Accuracy':[],
         'Fit Time':[],
@@ -69,7 +69,7 @@ def train_test_acc_time(models,X_train,y_train,X_test,y_test):
         t = time.time()
         model.fit(X_train, y_train)
 
-        results_dict['Classifier'] = model_name
+        results_dict['Model'] = model_name
         results_dict['Fit Time'] = time.time() - t
         results_dict['Train Accuracy'] = model.score(X_train, y_train)
 
@@ -90,5 +90,9 @@ def train_test_acc_time(models,X_train,y_train,X_test,y_test):
     results_df["Total Time"] = results_df["Fit Time"] - results_df["Predict Time"]
 
     results_df.sort_values(by='Test Accuracy', ascending=False)
+
+    cols = ['Model','Train Accuracy', 'Test Accuracy', 'Variance', 'Fit Time', 'Predict Time', 'Total Time']
+    results_df = results_df[cols]
+    results_df
 
     return results_df
