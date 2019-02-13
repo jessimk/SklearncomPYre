@@ -6,17 +6,17 @@ import matplotlib as plt
 
 sys.path.insert(0, os.path.abspath("../SklearncomPYre"))
 
-import comparison_viz
+from SklearncomPYre import comparison_viz
 
 # Test Dataframe
 df = pd.DataFrame({'index': [1, 2, 3, 4],
                    'models': ["Random Forest","MLPClassifier", "Logistic Regression","GaussianNB"],
-                   'Train Accuracy': [90, 82, 73, 74],
-                   'Test Accuracy': [85, 78, 69, 70],
-                   'Variance': [90, 82, 73, 74],
+                   'Train Accuracy': [90.1, 82.2, 73.3, 74.4],
+                   'Test Accuracy': [85.4, 78.3, 69.2, 70.1],
+                   'Variance': [5.1, 3.4, 5.6, 3.2],
                    'Fit Time (s)': [3, 2, 2.5, 1.2],
-                   'Predict Time (s)': [1, 1.4, 0.9, 2.2],
-                   'Total Time (s)': [90, 82, 73, 74]
+                   'Predict Time (s)': [1.1, 1.4, 0.9, 2.2],
+                   'Total Time (s)': [4.5, 6.6, 4.3, 2.1]
                   })
 
 def test_input_choice_value():
@@ -47,7 +47,7 @@ def test_input_comparison_value():
     Testing for entering an invalid dataframe as a comparison.
     """
     try:
-        comparison_viz(comparison=df['Train Accuracy'], choice='time')
+        comparison_viz(comparison=df[['models','Variance']], choice='time')
     except(ValueError):
         assert True
     else:

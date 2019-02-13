@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 
 # coding: utf-8
 
+
+
 def comparison_viz(comparison, choice):
     '''
     The purpose of the function is to help User visualize the comparison of accuracies or time given in the comparison
@@ -35,15 +37,20 @@ def comparison_viz(comparison, choice):
 
     ## Tests
 
+    # Choice Type
+
+    if type(choice) != str:
+        raise TypeError("Choice must be of type string")
+
 	# Choice value
 
     if (choice != 'time') and (choice != 'accuracy'):
         raise ValueError("Choice must either be 'time' or 'accuracy'")
 
-	# Choice Type
+	# Comparison Type
 
-    if type(choice) != str:
-        raise TypeError("Choice must be of type string")
+    if type(comparison) != pd.core.frame.DataFrame:
+        raise TypeError("Comparison must be of type pandas.core.frame.DataFrame")
 
 	# Comparison Value Rows
 
@@ -55,15 +62,20 @@ def comparison_viz(comparison, choice):
     if len(comparison.shape)!= 2:
         raise ValueError("Comparison must be 2 dimensional")
 
-	# Comparison Type
-
-    if type(comparison) != pandas.core.frame.DataFrame:
-        raise TypeError("Comparison must be of type pandas.core.frame.DataFrame")
-
 	# Comparison Value Columns
 
-    if (comparison.shape[1]!= 7) and (comparison.shape[1]!= 8):
+    if comparison.shape[1]!= 8:
         raise ValueError("Comparison must contain 7 columns (excluding index)")
+
+    # Comparison Models Column Type
+
+    if all(isinstance(n, str) for n in [comparison.iloc[:,1][x] for x in np.arange(comparison.shape[0])]) != True:
+        raise TypeError("Comparison Models column must only contain type string")
+
+    # Comparison Remainder Column Type
+
+    if (comparison.iloc[:,2:8].dtypes == float).all() != True:
+        raise TypeError("Comparison columns excluding 'Models' must only contain type float")
 
 	## Function
     n_models = comparison.shape[0]
@@ -101,10 +113,3 @@ def comparison_viz(comparison, choice):
     fig.tight_layout()
 
     plt.savefig('comparison.png', bbox_inches='tight')
-
-parser = argparse.ArgumentParser()
-parser.add_argument("comparison", help="Output of train_test_acc_time()")
-parser.add_argument("choice", help="accuracy or time")
-args = parser.parse_args()
-
-comparison_viz(args.comparison, args.choice)
