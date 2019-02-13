@@ -2,9 +2,11 @@
 # coding: utf-8
 
 # In[ ]:
+from sklearn.model_selection import train_test_split
+import numpy as np
+import pandas as pd
 
-
-def split(X,y,ptrain,ptest,pvalid):
+def split(X, y, ptrain, pvalid, ptest):
 
 
     """
@@ -35,10 +37,20 @@ def split(X,y,ptrain,ptest,pvalid):
     y test, type: Array like
 
     """
-    X_train_validation, X_test, y_train_validation, y_test = train_test_split(X, y, test_size= ptest)
+    if  type(X) != type(np.array(X)) and type(X) != type(pd.DataFrame(X)):
+        raise TypeError("X isn't the right type. See documentation and try again ¯\_(ツ)_/¯ ")
 
-    validation_ratio = round(pvalid/(ptrain + pvalid),2)
+    if  type(y) != type(np.array(y)) and type(y) != type(pd.DataFrame(y)):
+        raise TypeError("y isn't the right type. See documentation and try again ¯\_(ツ)_/¯ ")
 
-    X_train, X_validation, y_train, y_validation = train_test_split(X_train_validation, y_train_validation, test_size=validation_ratio)
+    if X.shape[0] != len(y):
+        raise TypeError("X & y lengths don't match. Try again ¯\_(ツ)_/¯ ")
 
-    return (X_train,y_train,X_validation, y_validation,X_train_validation,y_train_validation,X_test,y_test)
+    else:
+        X_train_validation, X_test, y_train_validation, y_test = train_test_split(X, y, test_size= ptest)
+
+        validation_ratio = round(pvalid/(ptrain + pvalid),2)
+
+        X_train, X_validation, y_train, y_validation = train_test_split(X_train_validation, y_train_validation, test_size=validation_ratio)
+
+    return X_train,y_train,X_validation, y_validation,X_train_validation,y_train_validation,X_test,y_test
