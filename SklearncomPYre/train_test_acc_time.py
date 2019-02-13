@@ -17,7 +17,6 @@ from sklearn.ensemble import RandomForestClassifier
 def train_test_acc_time(models,X_train,y_train,X_test,y_test):
 
     """
-
     The purpose of this function is to compare different sklearn regressors or classifiers in terms
     of training and test accuracies, and the time it takes to fit and predict.
     The function inputs are dictionary of models, input train samples `Xtrain`(input features),
