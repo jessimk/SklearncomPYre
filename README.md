@@ -7,11 +7,21 @@
 | Jes Simkin | [jessimk](https://github.com/jessimk) | jess354 |
 | Talha Siddiqui | [talhaadnan100](https://github.com/talhaadnan100) | talhaas |
 
+  
+  
+A Python package facilitating beautifully efficient comparisons of machine learning classifiers and regression models.
+
+### Requirements
+- `sklearn`
+- `numpy`
+- `matplotlib`
+- `pandas`
+
+### Installation
+`pip install git+https://github.com/UBC-MDS/SklearncomPYre.git`
+
 ### Summary
-
-A `python` package facilitating beautifully efficient comparisons of machine learning classifiers and regression models.
-
-__SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">scikit-learn</a>, combining it with <a href="https://pandas.pydata.org/">pandas</a> dataframes for easy, breezy, and beautiful machine learning regressor and classifier exploration.
+__SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">scikit-learn</a>, combining it with <a href="https://pandas.pydata.org/">pandas</a> dataframes and <a href="https://matplotlib.org/">matplotlib</a> plots for easy, breezy, and beautiful machine learning exploration.
 
 #### Function 1 :
 
