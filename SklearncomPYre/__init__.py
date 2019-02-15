@@ -1,6 +1,6 @@
 ## inititalization
-name = "SklearncomPYre"
+name = "sklearncomPYre"
 
-from SklearncomPYre.train_test_acc_time import train_test_acc_time
-from SklearncomPYre.split import split
-from SklearncomPYre.comparison_viz import comparison_viz
+from sklearncomPYre.train_test_acc_time import train_test_acc_time
+from sklearncomPYre.split import split
+from sklearncomPYre.comparison_viz import comparison_viz
