@@ -87,7 +87,7 @@ def train_test_acc_time(models,X_train,y_train,X_test,y_test):
     results_df=results_df.drop(['index'],axis=1)
 
     results_df["Variance"] = results_df["Train Accuracy"] - results_df["Test Accuracy"]
-    results_df["Total Time"] = results_df["Fit Time"] - results_df["Predict Time"]
+    results_df["Total Time"] = results_df["Fit Time"] + results_df["Predict Time"]
 
     results_df.sort_values(by='Test Accuracy', ascending=False)
 
