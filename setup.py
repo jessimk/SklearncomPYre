@@ -6,7 +6,7 @@ setup(
     version='v0.0',
     packages=['sklearncomPYre'],
 	url = ['https://github.com/UBC-MDS/SklearncomPYre'],
-    license='MIT', 
+    license='MIT',
 	long_description=open('README.md').read(),
-	install_requires=['numpy','sklearn','pandas','matplotlib.pyplot']	
+	install_requires=['numpy','sklearn','pandas','matplotlib']
 )

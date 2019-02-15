@@ -2,6 +2,7 @@ import os
 import sys
 import pandas as pd
 import pytest
+import glob
 import matplotlib as plt
 
 sys.path.insert(0, os.path.abspath("../SklearncomPYre"))
@@ -63,3 +64,12 @@ def test_input_comparison_type():
         assert True
     else:
         assert False
+
+def test_output_comparison_viz(tmpdir):
+    """
+    Testing for output from appropriate comprison dataframe and choice.
+    """
+    comparison_viz(comparison=df, choice='time')
+    pathway = tmpdir.join('time.png')
+    file = glob.glob(pathway.strpath)
+    assert type(file) == list
