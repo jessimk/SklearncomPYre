@@ -105,7 +105,7 @@ def comparison_viz(comparison, choice):
                     alpha=opacity, color='r',
                     label=labels[1])
 
-    ax.set_xticklabels(comparison.iloc[:,1])
+    ax.set_xticklabels(comparison.iloc[:,0])
     ax.set_xlabel('Models')
     ax.set_ylabel(labels[2])
     ax.set_xticks(index + bar_width / 2)
