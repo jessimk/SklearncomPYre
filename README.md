@@ -11,13 +11,13 @@
   
 A Python package facilitating beautifully efficient comparisons of machine learning classifiers and regression models.
 
-### Requirements
+### Dependencies
 - `sklearn`
 - `numpy`
 - `matplotlib`
 - `pandas`
 
-### Installation
+### Installation & Usage
 `pip install git+https://github.com/UBC-MDS/SklearncomPYre.git`
 
 ### Summary
