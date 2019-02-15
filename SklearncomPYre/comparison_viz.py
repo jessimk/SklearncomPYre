@@ -69,7 +69,7 @@ def comparison_viz(comparison, choice):
 
     # Comparison Models Column Type
 
-    if all(isinstance(n, str) for n in [comparison.iloc[:,1][x] for x in np.arange(comparison.shape[0])]) != True:
+    if all(isinstance(n, str) for n in [comparison.iloc[:,0][x] for x in np.arange(comparison.shape[0])]) != True:
         raise TypeError("Comparison Models column must only contain type string")
 
     # Comparison Remainder Column Type
