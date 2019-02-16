@@ -9,13 +9,17 @@
   
 <br>
 A Python package facilitating beautifully efficient comparisons of machine learning classifiers and regression models.
-<br>
+<br> 
+  
+A Python package facilitating beautifully efficient comparisons of machine learning classifiers and regression models.
+
 
 ### Dependencies
 - `sklearn`
 - `numpy`
 - `matplotlib`
 - `pandas`
+
 
 ### Installation & Usage
 `pip install git+https://github.com/UBC-MDS/SklearncomPYre.git`
@@ -24,6 +28,14 @@ A Python package facilitating beautifully efficient comparisons of machine learn
 __SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">scikit-learn</a>, combining it with <a href="https://pandas.pydata.org/">pandas</a> dataframes and <a href="https://matplotlib.org/">matplotlib</a> plots for easy, breezy, and beautiful machine learning exploration.
 
 #### <a href="https://github.com/UBC-MDS/SklearncomPYre/blob/master/SklearncomPYre/train_test_acc_time.py">Function 1:</a>   `train_test_acc_time()` 
+
+
+### Installation & Usage
+`pip install git+https://github.com/UBC-MDS/SklearncomPYre.git`
+
+### Summary
+__SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">scikit-learn</a>, combining it with <a href="https://pandas.pydata.org/">pandas</a> dataframes and <a href="https://matplotlib.org/">matplotlib</a> plots for easy, breezy, and beautiful machine learning exploration.
+
 
 The purpose of this function is to compare different sklearn regressors or classifiers in terms of training and test accuracies, and the time it takes to fit and predict. The function inputs are dictionary of models, input train samples `Xtrain`(input features), input test samples `Xtest`, target train values `ytrain` and target test values `ytest` (continuous or categorical).  
 
