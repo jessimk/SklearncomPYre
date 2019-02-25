@@ -12,8 +12,6 @@ A Python package facilitating beautifully efficient comparisons of machine learn
 <br>
 
 
-
-
 ### Dependencies
 - `sklearn`
 - `numpy`
@@ -25,6 +23,55 @@ A Python package facilitating beautifully efficient comparisons of machine learn
 
 Pleas use the following command to install the package. : <br>
 `pip install git+https://github.com/UBC-MDS/SklearncomPYre.git`
+
+Once installed, load the package using following commands :
+
+`from SklearncomPYre.train_test_acc_time import train_test_acc_time` <br>
+`from SklearncomPYre.comparison_viz import comparison_viz` <br>
+`from SklearncomPYre.split import split`<br>
+
+
+```
+# Example usage
+# Import libraries
+
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestClassifier
+
+from sklearn.linear_model import LogisticRegression
+from sklearn.datasets import load_iris
+from SklearncomPYre.train_test_acc_time import train_test_acc_time
+from SklearncomPYre.comparison_viz import comparison_viz
+from SklearncomPYre.split import split
+
+# Create toy example with Iris dataset
+
+dictionary = {
+    'knn': KNeighborsClassifier(),
+    'LogRegression':LogisticRegression() ,
+    'RForest': RandomForestClassifier()}
+
+iris = load_iris()
+X = iris.data[:, [2, 3]]
+y = iris.target
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=123
+
+# Call function  train_test_acc_time()
+
+result = train_test_acc_time(dictionary,X_train,y_train,X_test,y_test)
+
+# Use function comparison_viz()
+
+comparison_viz(result,'time')
+
+# Use function split()
+
+split(X,y,0.5,0.2,0.3)
+
+  ```
+
 
 ### Summary
 __SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">scikit-learn</a>, combining it with <a href="https://pandas.pydata.org/">pandas</a> dataframes and <a href="https://matplotlib.org/">matplotlib</a> plots for easy, breezy, and beautiful machine learning exploration.

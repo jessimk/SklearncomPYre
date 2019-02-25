@@ -83,12 +83,12 @@ def comparison_viz(comparison, choice):
     n_models = comparison.shape[0]
 
     if choice == 'accuracy':
-        x = comparison.iloc[:,2]
-        y = comparison.iloc[:,3]
+        x = comparison.iloc[:,1]
+        y = comparison.iloc[:,2]
         labels = ('Train Accuracy','Test Accuracy','Accuracy','Train and Test Accuracy by Model')
     elif choice == 'time':
-        x = comparison.iloc[:,5]
-        y = comparison.iloc[:,6]
+        x = comparison.iloc[:,4]
+        y = comparison.iloc[:,5]
         labels = ('Fit Time','Predict Time','Time (s)','Fit and Predict Time by Model')
 
     fig, ax = plt.subplots()
