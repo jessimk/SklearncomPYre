@@ -7,38 +7,101 @@
 | Jes Simkin | [jessimk](https://github.com/jessimk) | jess354 |
 | Talha Siddiqui | [talhaadnan100](https://github.com/talhaadnan100) | talhaas |
 
+<br>
+A Python package facilitating beautifully efficient comparisons of machine learning classifiers and regression models.
+<br>
+
+
+
+
+### Dependencies
+- `sklearn`
+- `numpy`
+- `matplotlib`
+- `pandas`
+
+
+### Installation & Usage
+
+Pleas use the following command to install the package. : <br>
+`pip install git+https://github.com/UBC-MDS/SklearncomPYre.git`
+
+Once installed, load the package using following commands :
+
+`from SklearncomPYre.train_test_acc_time import train_test_acc_time` <br>
+`from SklearncomPYre.comparison_viz import comparison_viz` <br>
+`from SklearncomPYre.split import split`<br>
+
+
+```
+# Example usage
+# Import libraries
+
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestClassifier
+
+from sklearn.linear_model import LogisticRegression
+from sklearn.datasets import load_iris
+from SklearncomPYre.train_test_acc_time import train_test_acc_time
+from SklearncomPYre.comparison_viz import comparison_viz
+from SklearncomPYre.split import split
+
+# Create toy example with Iris dataset
+
+dictionary = {
+    'knn': KNeighborsClassifier(),
+    'LogRegression':LogisticRegression() ,
+    'RForest': RandomForestClassifier()}
+
+iris = load_iris()
+X = iris.data[:, [2, 3]]
+y = iris.target
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=123
+
+# Call function  train_test_acc_time()
+
+result = train_test_acc_time(dictionary,X_train,y_train,X_test,y_test)
+
+# Use function comparison_viz()
+
+comparison_viz(result,'time')
+
+# Use function split()
+
+split(X,y,0.5,0.2,0.3)
+
+  ```
+
+
 ### Summary
+__SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">scikit-learn</a>, combining it with <a href="https://pandas.pydata.org/">pandas</a> dataframes and <a href="https://matplotlib.org/">matplotlib</a> plots for easy, breezy, and beautiful machine learning exploration.
 
-A `python` package facilitating beautifully efficient comparisons of machine learning classifiers and regression models.
+#### <a href="https://github.com/UBC-MDS/SklearncomPYre/blob/master/SklearncomPYre/train_test_acc_time.py">Function 1:</a>   `train_test_acc_time()`
 
-__SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">scikit-learn</a>, combining it with <a href="https://pandas.pydata.org/">pandas</a> dataframes for easy, breezy, and beautiful machine learning regressor and classifier exploration.
+The purpose of this function is to compare different sklearn regressors or classifiers in terms of training and test accuracies, and the time it takes to fit and predict. The function inputs are dictionary of models, input train samples `Xtrain`(input features), input test samples `Xtest`, target train values `ytrain` and target test values `ytest` (continuous or categorical).  
 
-#### Function 1 :
-
-- `train_test_acc_time()`
-    The purpose of this function is to compare different sklearn regressors or classifiers in terms of training and test accuracies, and the time it takes to fit and predict. The function inputs are dictionary of models, input train samples `Xtrain`(input features), input test samples `Xtest`, target train values `ytrain` and target test values `ytest` (continuous or categorical).
-    The function outputs a beautiful dataframe with training & test scores, model variance, and the time it takes to fit and predict using different models.  <br>
+The function outputs a beautiful dataframe with training & test scores, model variance, and the time it takes to fit and predict using different models.  <br>
 
   __Inputs:__
 
-    - Dictionary of ML classifiers or regressors.
-    - X train set, type: `Array-like `
-    - Y train set, type: `Array-like`
-    - X test set, type: `Array-like `
-    - Y test set, type: `Array-like`
+   - Dictionary of ML classifiers or regressors.
+   - X train set, type: `Array-like `
+   - Y train set, type: `Array-like`
+   - X test set, type: `Array-like `
+   - Y test set, type: `Array-like`
 
   __Outputs:__
 
   - Dataframe with 7 columns: (1) regressor or classifier name, (2) training accuracy, (3) test accuracy, (4) model variance, (5) time it takes to fit, (6) time it takes to predict and (7) total time. The dataframe will be sorted by test score in descending order.
 
 
-#### Function 2 :
+#### <a href="https://github.com/UBC-MDS/SklearncomPYre/blob/master/SklearncomPYre/comparison_viz.py">Function 2:</a> `comparison_viz()`
 
-- `comparison_viz()`
+The purpose of this function is to visualize the output of `train_test_acc_time()` for easy communication and interpretation. The user has the choice to visualize a comparison of accuracies or time. It takes in a dataframe with 7 attributes i.e. model name, training & test scores, model variance, and the time it takes to fit, predict and total time.
 
-  The purpose of this function is to visualize the output of `train_test_acc_time()` for easy communication and interpretation. The user has the choice to visualize a comparison of accuracies or time. It takes in a dataframe with 7 attributes i.e. model name, training & test scores, model variance, and the time it takes to fit, predict and total time.
-
-  Outputs a beautiful <a href="https://matplotlib.org">matplotlib</a> bar chart comparison of different models' training and test scores or the time it takes to fit and predict.
+Outputs a beautiful <a href="https://matplotlib.org">matplotlib</a> bar chart comparison of different models' training and test scores or the time it takes to fit and predict.
 
   __Inputs:__   
 
@@ -49,13 +112,11 @@ __SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">sc
 
   - Bar chart of accuracies or time comparison by models saved to root directory. Type: `png`
 
-#### Function 3 :
+#### <a href= "https://github.com/UBC-MDS/SklearncomPYre/blob/master/SklearncomPYre/split.py">Function 3:</a> `split()`
 
-- `split()`
+The function splits the training input samples `X`, and target values `y` (class labels in classification, real numbers in regression) into train, test and validation sets according to specified proportions.
 
-  The function splits the training input samples `X`, and target values `y` (class labels in classification, real numbers in regression) into train, test and validation sets according to specified proportions.
-
-  Outputs four array like training, validation, test, and combined training and validation sets and four y arrays. <br>
+Outputs four array like training, validation, test, and combined training and validation sets and four y arrays. <br>
 
   __Inputs:__
 

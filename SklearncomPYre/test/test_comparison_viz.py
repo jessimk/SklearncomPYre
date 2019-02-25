@@ -70,6 +70,6 @@ def test_output_comparison_viz(tmpdir):
     Testing for output from appropriate comprison dataframe and choice.
     """
     comparison_viz(comparison=df, choice='time')
-    pathway = tmpdir.join('time.png')
+    pathway = tmpdir.join('comparison.png')
     file = glob.glob(pathway.strpath)
     assert type(file) == list
