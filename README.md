@@ -12,8 +12,6 @@ A Python package facilitating beautifully efficient comparisons of machine learn
 <br>
 
 
-
-
 ### Dependencies
 - `sklearn`
 - `numpy`

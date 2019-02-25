@@ -64,13 +64,15 @@ def comparison_viz(comparison, choice):
 
 	# Comparison Value Columns
 
-    if comparison.shape[1]!= 8:
+    if comparison.shape[1]!= 7:
         raise ValueError("Comparison must contain 7 columns (excluding index)")
 
     # Comparison Models Column Type
 
-    if all(isinstance(n, str) for n in [comparison.iloc[:,0][x] for x in np.arange(comparison.shape[0])]) != True:
-        raise TypeError("Comparison Models column must only contain type string")
+    for j in np.arange(0,comparison.shape[0] -1,1):
+        if type(comparison.iloc[:,0][j]) != type("string"):
+           raise TypeError("Comparison Models column must only contain type string")
+
 
     # Comparison Remainder Column Type
 
@@ -103,7 +105,7 @@ def comparison_viz(comparison, choice):
                     alpha=opacity, color='r',
                     label=labels[1])
 
-    ax.set_xticklabels(comparison.iloc[:,1])
+    ax.set_xticklabels(comparison.iloc[:,0])
     ax.set_xlabel('Models')
     ax.set_ylabel(labels[2])
     ax.set_xticks(index + bar_width / 2)

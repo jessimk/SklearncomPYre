@@ -20,6 +20,15 @@ df = pd.DataFrame({'index': [1, 2, 3, 4],
                    'Total Time (s)': [4.5, 6.6, 4.3, 2.1]
                   })
 
+df2 = pd.DataFrame({'0_Models': ["Random Forest","MLPClassifier", "Logistic Regression","GaussianNB"],
+                   'Train Accuracy': [90.1, 82.2, 73.3, 74.4],
+                   'Test Accuracy': [85.4, 78.3, 69.2, 70.1],
+                   'Variance': [5.1, 3.4, 5.6, 3.2],
+                   'Fit Time (s)': [3, 2, 2.5, 1.2],
+                   'Predict Time (s)': [1.1, 1.4, 0.9, 2.2],
+                   'Total Time (s)': [4.5, 6.6, 4.3, 2.1]
+                  })
+
 def test_input_choice_value():
     """
     Testing for entering an invalid string as a choice.
@@ -69,7 +78,14 @@ def test_output_comparison_viz(tmpdir):
     """
     Testing for output from appropriate comprison dataframe and choice.
     """
-    comparison_viz(comparison=df, choice='time')
+    comparison_viz(comparison=df2, choice='time')
     pathway = tmpdir.join('comparison.png')
     file = glob.glob(pathway.strpath)
     assert type(file) == list
+
+def test_input_df_dim():
+    """
+    Testing that given df has 7 columns
+    """
+    with pytest.raises(ValueError):
+        comparison_viz(df, 'time')
