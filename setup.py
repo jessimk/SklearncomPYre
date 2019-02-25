@@ -4,7 +4,7 @@ from distutils.core import setup
 setup(
     name='SklearncomPYre',
     version='v0.0',
-    packages=['sklearncomPYre'],
+    packages=['SklearncomPYre'],
 	url = ['https://github.com/UBC-MDS/SklearncomPYre'],
     license='MIT',
 	long_description=open('README.md').read(),
