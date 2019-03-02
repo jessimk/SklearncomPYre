@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 
-def comparison_viz(comparison, choice):
+def comparison_viz(comparison, choice = "accuracy"):
     '''
     The purpose of the function is to help User visualize the comparison of accuracies or time given in the comparison
     dataframe. It takes in a dataframe with 7 attributes i.e. model name, training & test scores, model variance,
@@ -27,7 +27,7 @@ def comparison_viz(comparison, choice):
     - time it takes to fit
     - time it takes to predict and
     - total time. Type: `pandas.Dataframe
-    - Choice of `accuracy` or `time`. Type: `string`
+    - Choice of `accuracy` or `time`. Defaults to `accuracy`. Type: `string`
 
     Outputs:
     - Bar chart of accuracies or time comparison by models. Type: `png`
