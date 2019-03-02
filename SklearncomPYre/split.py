@@ -36,6 +36,12 @@ def split(X, y, ptrain, pvalid, ptest):
     X test set, type: Array like
     y test, type: Array like
 
+    Examples:
+    # Splitting up datasets into 40% training, 20% vaildation, and 40% tests sets.
+    X_train, y_train, X_val, y_val, X_train_val, y_train_val, X_test, y_test = split(X,y,0.4,0.2,0.4)
+
+    See README for examples-- https://github.com/UBC-MDS/SklearncomPYre/blob/Jes/README.md
+
     """
     if  type(X) != type(np.array(X)) and type(X) != type(pd.DataFrame(X)):
         raise TypeError("X isn't the right type. See documentation and try again ¯\_(ツ)_/¯ ")
