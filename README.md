@@ -13,10 +13,12 @@ A Python package facilitating beautifully efficient comparisons of machine learn
 
 
 ### Dependencies
-- `sklearn`
-- `numpy`
-- `matplotlib`
-- `pandas`
+- `Python==3.6.8`
+- `matplotlib==3.0.1`
+- `numpy==1.15.4`
+- `pandas==0.20.3`
+- `scikit-learn==0.20.2`
+- `scipy==1.2.0`
 
 
 ### Installation & Usage
@@ -30,48 +32,55 @@ Once installed, load the package using following commands :
 `from SklearncomPYre.comparison_viz import comparison_viz` <br>
 `from SklearncomPYre.split import split`<br>
 
+Here is an example of how you can use SklearncomPYre:
 
 ```
 # Example usage
-# Import libraries
 
+# Import libraries
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
-
 from sklearn.linear_model import LogisticRegression
-from sklearn.datasets import load_iris
+
+# Importing SklearncomPYre
 from SklearncomPYre.train_test_acc_time import train_test_acc_time
 from SklearncomPYre.comparison_viz import comparison_viz
 from SklearncomPYre.split import split
 
-# Create toy example with Iris dataset
+# Loading the handy iris dataset
+from sklearn.datasets import load_iris
+
+iris = load_iris()
+X = iris.data[:, [2, 3]]
+y = iris.target
+
+# Setting up a dictionary of classifiers to test
 
 dictionary = {
     'knn': KNeighborsClassifier(),
     'LogRegression':LogisticRegression() ,
     'RForest': RandomForestClassifier()}
 
-iris = load_iris()
-X = iris.data[:, [2, 3]]
-y = iris.target
+# Let's start by using the SklearncomPYre function split().
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=123
+# Splitting up datasets into 40% training, 20% vaildation, and 40% tests sets.
 
-# Call function  train_test_acc_time()
+X_train, y_train, X_val, y_val, X_train_val, y_train_val, X_test, y_test = split(X,y,0.4,0.2,0.4)
 
-result = train_test_acc_time(dictionary,X_train,y_train,X_test,y_test)
+#Now, let's train some models and compare them in a pandas dataframe by using train_test_acc_time().
 
-# Use function comparison_viz()
+result = train_test_acc_time(dictionary,X_train,y_train,X_val,y_val)
+result
 
-comparison_viz(result,'time')
+# Next, let's take a look at some some plots with comparison_viz()
 
-# Use function split()
+#Our plots will be saved to the working directory.
 
-split(X,y,0.5,0.2,0.3)
+comparison_viz(result, "accuracy")
+comparison_viz(result, 'time')
 
   ```
-
 
 ### Summary
 __SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">scikit-learn</a>, combining it with <a href="https://pandas.pydata.org/">pandas</a> dataframes and <a href="https://matplotlib.org/">matplotlib</a> plots for easy, breezy, and beautiful machine learning exploration.
