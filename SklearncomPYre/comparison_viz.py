@@ -68,20 +68,14 @@ def comparison_viz(comparison, choice = "accuracy"):
         if type(comparison.iloc[:,0][j]) != type("string"):
            raise TypeError("Comparison Models column must only contain type string")
 
-
-    # Comparison Remainder Column Type
-
-    if (comparison.iloc[:,2:8].dtypes == float).all() != True: #pragma: no cover
-        raise TypeError("Comparison columns excluding 'Models' must only contain type float")
-
 	## Function
     n_models = comparison.shape[0]
 
-    if choice == 'accuracy': #pragma: no cover
+    if choice == 'accuracy':
         x = comparison.iloc[:,1]
         y = comparison.iloc[:,2]
         labels = ('Train Accuracy','Test Accuracy','Accuracy','Train and Test Accuracy by Model')
-    elif choice == 'time': #pragma: no cover
+    elif choice == 'time':
         x = comparison.iloc[:,4]
         y = comparison.iloc[:,5]
         labels = ('Fit Time','Predict Time','Time (s)','Fit and Predict Time by Model')
