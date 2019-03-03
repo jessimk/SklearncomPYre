@@ -153,3 +153,10 @@ Our idea for this package was to facilitate the comparison of machine learning c
 We are not currently aware of any packages that combine `sci-kit learn` and `pandas` for efficient and interpretable model-to-model comparisons. We expect that this combination is used in practice and after having used it while learning machine learning techniques during our UBC MDS coursework, we thought it would be a good combination of tools to formally package together.   
 
 We are aware of a <a href="">new package</a>, `sklearn-pandas` that combines `sci-kit learn` and `pandas` powers but this new package is tailored towards providing full-cycle machine learning functionality (feature selection, transformations, inputting/outputting pandas dataframes, etc.) rather than focusing facilitating model-to-model comparisons via dataframes.
+
+
+### Branch Coverage
+
+The branch coverage results are as follows :
+
+![branch_coverage](branch_coverage.PNG)
