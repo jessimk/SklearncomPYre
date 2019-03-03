@@ -57,11 +57,6 @@ def comparison_viz(comparison, choice = "accuracy"):
     if comparison.shape[0] < 1:
         raise ValueError("Comparison must at least have 1 row")
 
-	# Comparison dimensions
-
-    if len(comparison.shape)!= 2:
-        raise ValueError("Comparison must be 2 dimensional")
-
 	# Comparison Value Columns
 
     if comparison.shape[1]!= 7:
@@ -72,12 +67,6 @@ def comparison_viz(comparison, choice = "accuracy"):
     for j in np.arange(0,comparison.shape[0] -1,1):
         if type(comparison.iloc[:,0][j]) != type("string"):
            raise TypeError("Comparison Models column must only contain type string")
-
-
-    # Comparison Remainder Column Type
-
-    if (comparison.iloc[:,2:8].dtypes == float).all() != True:
-        raise TypeError("Comparison columns excluding 'Models' must only contain type float")
 
 	## Function
     n_models = comparison.shape[0]
