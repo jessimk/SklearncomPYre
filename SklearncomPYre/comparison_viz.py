@@ -57,11 +57,6 @@ def comparison_viz(comparison, choice = "accuracy"):
     if comparison.shape[0] < 1:
         raise ValueError("Comparison must at least have 1 row")
 
-	# Comparison dimensions
-
-    if len(comparison.shape)!= 2:
-        raise ValueError("Comparison must be 2 dimensional")
-
 	# Comparison Value Columns
 
     if comparison.shape[1]!= 7:
@@ -76,17 +71,17 @@ def comparison_viz(comparison, choice = "accuracy"):
 
     # Comparison Remainder Column Type
 
-    if (comparison.iloc[:,2:8].dtypes == float).all() != True:
+    if (comparison.iloc[:,2:8].dtypes == float).all() != True: #pragma: no cover
         raise TypeError("Comparison columns excluding 'Models' must only contain type float")
 
 	## Function
     n_models = comparison.shape[0]
 
-    if choice == 'accuracy':
+    if choice == 'accuracy': #pragma: no cover
         x = comparison.iloc[:,1]
         y = comparison.iloc[:,2]
         labels = ('Train Accuracy','Test Accuracy','Accuracy','Train and Test Accuracy by Model')
-    elif choice == 'time':
+    elif choice == 'time': #pragma: no cover
         x = comparison.iloc[:,4]
         y = comparison.iloc[:,5]
         labels = ('Fit Time','Predict Time','Time (s)','Fit and Predict Time by Model')
