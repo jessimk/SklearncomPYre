@@ -7,17 +7,7 @@ import matplotlib as plt
 from SklearncomPYre import comparison_viz
 
 # Test Dataframe
-df = pd.DataFrame({'index': [1, 2, 3, 4],
-                   'models': ["Random Forest","MLPClassifier", "Logistic Regression","GaussianNB"],
-                   'Train Accuracy': [90.1, 82.2, 73.3, 74.4],
-                   'Test Accuracy': [85.4, 78.3, 69.2, 70.1],
-                   'Variance': [5.1, 3.4, 5.6, 3.2],
-                   'Fit Time (s)': [3, 2, 2.5, 1.2],
-                   'Predict Time (s)': [1.1, 1.4, 0.9, 2.2],
-                   'Total Time (s)': [4.5, 6.6, 4.3, 2.1]
-                  })
-
-df2 = pd.DataFrame({'0_Models': ["Random Forest","MLPClassifier", "Logistic Regression","GaussianNB"],
+df = pd.DataFrame({'Models': ["Random Forest","MLPClassifier", "Logistic Regression","GaussianNB"],
                    'Train Accuracy': [90.1, 82.2, 73.3, 74.4],
                    'Test Accuracy': [85.4, 78.3, 69.2, 70.1],
                    'Variance': [5.1, 3.4, 5.6, 3.2],
@@ -54,7 +44,7 @@ def test_input_comparison_value():
     Testing for entering an invalid dataframe as a comparison.
     """
     try:
-        comparison_viz(comparison=df[['models','Variance']], choice='time')
+        comparison_viz(comparison=df[['Models','Variance']], choice='time')
     except(ValueError):
         assert True
     else:
@@ -86,9 +76,34 @@ def test_output_comparison_viz_accuracy():
     comparison_viz(comparison=df, choice='accuracy')
     assert "comparison.png" in os.listdir()
 
-def test_input_df_dim():
+
+def test_input_df_without_rows():
     """
-    Testing that given df has 7 columns
+    Comparison dataframe has no rows
     """
-    with pytest.raises(ValueError):
-        comparison_viz(df, 'time')
+    try:
+        comparison_viz(comparison=df.drop([0,1,2,3]), choice='time')
+    except(ValueError):
+        assert True
+
+
+def test_input_df_model_column_not_string():
+    """
+    Comparison dataframe model column not string
+    """
+    try:
+        df['Models'] = 1
+        comparison_viz(comparison=df, choice='time')
+    except(TypeError):
+        assert True
+
+
+def test_input_df_other_columns_not_float():
+    """
+    Comparison dataframe other columns not float
+    """
+    try:
+        df['Variance'] = "a"
+        comparison_viz(comparison=df, choice='time')
+    except(TypeError):
+        assert True
