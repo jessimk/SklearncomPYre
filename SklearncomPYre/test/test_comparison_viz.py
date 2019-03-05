@@ -1,13 +1,10 @@
 import os
-import sys
 import pandas as pd
 import pytest
 import glob
 import matplotlib as plt
 
-sys.path.insert(0, os.path.abspath("../SklearncomPYre"))
-
-from SklearncomPYre import comparison_viz 
+from SklearncomPYre import comparison_viz
 
 # Test Dataframe
 df = pd.DataFrame({'index': [1, 2, 3, 4],
@@ -74,14 +71,20 @@ def test_input_comparison_type():
     else:
         assert False
 
-def test_output_comparison_viz(tmpdir):
+def test_output_comparison_viz_time():
+    """
+    Testing for output from appropriate comparison dataframe and choice time.
+    """
+    comparison_viz(comparison=df, choice='time')
+    assert "comparison.png" in os.listdir()
+
+
+def test_output_comparison_viz_accuracy():
     """
     Testing for output from appropriate comprison dataframe and choice.
     """
-    comparison_viz(comparison=df2, choice='time')
-    pathway = tmpdir.join('comparison.png')
-    file = glob.glob(pathway.strpath)
-    assert type(file) == list
+    comparison_viz(comparison=df, choice='accuracy')
+    assert "comparison.png" in os.listdir()
 
 def test_input_df_dim():
     """
