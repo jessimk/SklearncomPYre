@@ -1,11 +1,8 @@
 import os
-import sys
 import pandas as pd
 import pytest
 import glob
 import matplotlib as plt
-
-sys.path.insert(0, os.path.abspath("../SklearncomPYre"))
 
 from SklearncomPYre import comparison_viz
 
@@ -60,24 +57,20 @@ def test_input_comparison_type():
         assert True
 
 
-def test_output_comparison_viz_time(tmpdir):
+def test_output_comparison_viz_time():
     """
     Testing for output from appropriate comparison dataframe and choice time.
     """
     comparison_viz(comparison=df, choice='time')
-    pathway = tmpdir.join('comparison.png')
-    file = glob.glob(pathway.strpath)
-    assert type(file) == list
+    assert "comparison.png" in os.listdir()
 
 
-def test_output_comparison_viz_accuracy(tmpdir):
+def test_output_comparison_viz_accuracy():
     """
     Testing for output from appropriate comparison dataframe and choice accuracy.
     """
     comparison_viz(comparison=df, choice='accuracy')
-    pathway = tmpdir.join('comparison.png')
-    file = glob.glob(pathway.strpath)
-    assert type(file) == list
+    assert "comparison.png" in os.listdir()
 
 def test_input_df_without_rows():
     """
