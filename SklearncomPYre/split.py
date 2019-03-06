@@ -19,8 +19,8 @@ def split(X, y, ptrain, pvalid, ptest):
 
     Inputs:
 
-    X data set, type: Array like
-    Y data set, type: Array like
+    X data set, type: DataFrame or Array
+    Y data set, type: DataFrame or Array
     proportion of training data , type: float
     proportion of test data , type: float
     proportion of validation data, type: float
@@ -43,14 +43,17 @@ def split(X, y, ptrain, pvalid, ptest):
     See README for examples-- https://github.com/UBC-MDS/SklearncomPYre/blob/Jes/README.md
 
     """
-    if  type(X) != type(np.array(X)) and type(X) != type(pd.DataFrame(X)):
-        raise TypeError("X isn't the right type. See documentation and try again ¯\_(ツ)_/¯ ")
+    if (type(X) != type(np.array(X)) and type(X) != type(pd.DataFrame(X))) or \
+        (type(y) != type(np.array(y)) and type(y) != type(pd.DataFrame(y))):
+        raise TypeError("Check that X and y are either dataframes or arrays and try again ¯\_(ツ)_/¯ ")
 
-    if  type(y) != type(np.array(y)) and type(y) != type(pd.DataFrame(y)):
-        raise TypeError("y isn't the right type. See documentation and try again ¯\_(ツ)_/¯ ")
+    elif (X.shape[0] != len(y)) and (len(y) <= 2):
+        raise TypeError("Check that X & y match in length and have at least 3 rows, then try again ¯\_(ツ)_/¯ ")
 
-    if X.shape[0] != len(y):
-        raise TypeError("X & y lengths don't match. Try again ¯\_(ツ)_/¯ ")
+    elif (y == type(pd.DataFrame(y)) and y.unique() == 1) or (y == type(np.array(y)) and np.unique(y) == 1):
+        print("y only has 1 unique value. Did you pass in the right y? \
+        This might not be a great idea for machine learning down the road.")
+        pass
 
     else:
         X_train_validation, X_test, y_train_validation, y_test = train_test_split(X, y, test_size= ptest)
