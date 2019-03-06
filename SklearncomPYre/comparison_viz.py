@@ -64,9 +64,8 @@ def comparison_viz(comparison, choice = "accuracy"):
 
     # Comparison Models Column Type
 
-    for j in np.arange(0,comparison.shape[0] -1,1):
-        if type(comparison.iloc[:,0][j]) != type("string"):
-           raise TypeError("Comparison Models column must only contain type string")
+    if all(isinstance(m, str) for m in comparison.iloc[:,0].tolist()) != True:
+        raise TypeError("Comparison Models column must only contain type string")
 
 	## Function
     n_models = comparison.shape[0]
