@@ -19,8 +19,8 @@ def split(X, y, ptrain, pvalid, ptest):
 
     Inputs:
 
-    X data set, type: DataFrame or Array
-    Y data set, type: DataFrame or Array
+    X data set, type: Array like
+    Y data set, type: Array like
     proportion of training data , type: float
     proportion of test data , type: float
     proportion of validation data, type: float
@@ -43,23 +43,33 @@ def split(X, y, ptrain, pvalid, ptest):
     See README for examples-- https://github.com/UBC-MDS/SklearncomPYre/blob/Jes/README.md
 
     """
-    if (type(X) != type(np.array(X)) and type(X) != type(pd.DataFrame(X))) or \
-        (type(y) != type(np.array(y)) and type(y) != type(pd.DataFrame(y))):
-        raise TypeError("Check that X and y are either dataframes or arrays and try again ¯\_(ツ)_/¯ ")
 
-    elif (X.shape[0] != len(y)) and (len(y) <= 2):
-        raise TypeError("Check that X & y match in length and have at least 3 rows, then try again ¯\_(ツ)_/¯ ")
-
-    elif (y == type(pd.DataFrame(y)) and y.unique() == 1) or (y == type(np.array(y)) and np.unique(y) == 1):
-        print("y only has 1 unique value. Did you pass in the right y? \
-        This might not be a great idea for machine learning down the road.")
-        pass
-
-    else:
+    try:
         X_train_validation, X_test, y_train_validation, y_test = train_test_split(X, y, test_size= ptest)
 
         validation_ratio = round(pvalid/(ptrain + pvalid),2)
 
         X_train, X_validation, y_train, y_validation = train_test_split(X_train_validation, y_train_validation, test_size=validation_ratio)
+
+    except ValueError:
+        print("¯\_(ツ)_/¯ Error: Check that X and y are dataframes or arrays. X and y must be the same length. Try again?")
+        raise ValueError("¯\_(ツ)_/¯ Error: Check that X and y are dataframes or arrays. X and y must be the same length. Try again?")
+
+    except TypeError:
+        print("¯\_(ツ)_/¯ Error: Check that X and y are dataframes or arrays. X and y must be the same length. Try again?")
+        raise TypeError("¯\_(ツ)_/¯ Error: Check that X and y are dataframes or arrays. X and y must be the same length. Try again?")
+
+    except AttributeError:
+        print("¯\_(ツ)_/¯ Error: Check that X and y are dataframes or arrays. X and y must be the same length. Try again?")
+        raise AttributeError("¯\_(ツ)_/¯ Error: Check that X and y are dataframes or arrays. X and y must be the same length. Try again?")
+
+
+    finally:
+        X_train_validation, X_test, y_train_validation, y_test = train_test_split(X, y, test_size= ptest)
+
+        validation_ratio = round(pvalid/(ptrain + pvalid),2)
+
+        X_train, X_validation, y_train, y_validation = train_test_split(X_train_validation, y_train_validation, test_size=validation_ratio)
+
 
     return X_train,y_train,X_validation, y_validation,X_train_validation,y_train_validation,X_test,y_test
