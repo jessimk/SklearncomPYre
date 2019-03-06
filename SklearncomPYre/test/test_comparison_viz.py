@@ -16,6 +16,10 @@ df = pd.DataFrame({'Models': ["Random Forest","MLPClassifier", "Logistic Regress
                    'Total Time (s)': [4.5, 6.6, 4.3, 2.1]
                   })
 
+cols = ['Models','Train Accuracy', 'Test Accuracy', 'Variance', 'Fit Time (s)', 'Predict Time (s)', 'Total Time (s)']
+
+df = df[cols]
+
 def test_input_choice_value():
     """
     Testing for entering an invalid string as a choice.
