@@ -43,13 +43,25 @@ def split(X, y, ptrain, pvalid, ptest):
     See README for examples-- https://github.com/UBC-MDS/SklearncomPYre/blob/Jes/README.md
 
     """
-    if  (type(X) != type(np.array(X)) and type(X) != type(pd.DataFrame(X))) or \
-        (type(y) != type(np.array(y)) and type(y) != type(pd.DataFrame(y))):
-        raise TypeError("X or y aren't the right type. \
-        Make sure they are dataframes or arrays and try again ¯\_(ツ)_/¯ ")
+    #testing that X and y are both either dataframe or array types
 
-    if X.shape[0] != len(y):
-        raise TypeError("X & y lengths don't match. Try again ¯\_(ツ)_/¯ ")
+    # if  (type(X) != type(np.array(X)) and type(X) != type(pd.DataFrame(X))) or \
+    #     (type(y) != type(np.array(y)) and type(y) != type(pd.DataFrame(y))) or \
+    #     X.shape[0] != len(y):
+    #     raise TypeError("X or y are not the right type. X and Y should be the \
+    #     same length and they should be either arrays or dataframes.\
+    #     See documentation and try again ¯\_(ツ)_/¯ ")
+
+
+    if  type(X) != type(np.array([2,2])) and type(X) != type(pd.DataFrame([2,2])):
+        raise TypeError("X isn't the right type. Make sure it's a dataframe or array ¯\_(ツ)_/¯ ")
+
+    elif type(y) != type(np.array([2,2])) and type(y) != type(pd.DataFrame([2,2])):
+        raise TypeError("y isn't the right type. Make sure it's a dataframe or array ¯\_(ツ)_/¯ ")
+
+    #testing that X and y have the same number of rows and have at least 3 rows
+    elif (X.shape[0] != len(y)) and (len(y) < 3):
+        raise TypeError("X & y lengths don't match. Both X & y need to have at least 3 rows. Try again ¯\_(ツ)_/¯ ")
 
     else:
         X_train_validation, X_test, y_train_validation, y_test = train_test_split(X, y, test_size= ptest)
