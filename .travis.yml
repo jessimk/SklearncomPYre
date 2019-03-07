@@ -1,8 +1,6 @@
 language: python
-
 python:
   - "3.6"
-
 install:
   - pip install git+https://github.com/UBC-MDS/SklearncomPYre.git
   - pip install -U pytest
@@ -11,5 +9,4 @@ install:
   - pip install matplotlib
   - pip install -U scikit-learn
 
-script:
-  - pytest
+script: pytest
