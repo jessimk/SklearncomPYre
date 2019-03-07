@@ -43,11 +43,10 @@ def split(X, y, ptrain, pvalid, ptest):
     See README for examples-- https://github.com/UBC-MDS/SklearncomPYre/blob/Jes/README.md
 
     """
-    if  type(X) != type(np.array(X)) and type(X) != type(pd.DataFrame(X)):
-        raise TypeError("X isn't the right type. See documentation and try again ¯\_(ツ)_/¯ ")
-
-    if  type(y) != type(np.array(y)) and type(y) != type(pd.DataFrame(y)):
-        raise TypeError("y isn't the right type. See documentation and try again ¯\_(ツ)_/¯ ")
+    if  (type(X) != type(np.array(X)) and type(X) != type(pd.DataFrame(X))) or \
+        (type(y) != type(np.array(y)) and type(y) != type(pd.DataFrame(y))):
+        raise TypeError("X or y aren't the right type. \
+        Make sure they are dataframes or arrays and try again ¯\_(ツ)_/¯ ")
 
     if X.shape[0] != len(y):
         raise TypeError("X & y lengths don't match. Try again ¯\_(ツ)_/¯ ")
