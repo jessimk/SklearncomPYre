@@ -35,6 +35,7 @@ def comparison_viz(comparison, choice = "accuracy"):
 	inspiration: https://matplotlib.org/gallery/statistics/barchart_demo.html
     '''
 
+
     ## Tests
 
     # Choice Type
@@ -42,64 +43,71 @@ def comparison_viz(comparison, choice = "accuracy"):
     if type(choice) != str:
         raise TypeError("Choice must be of type string")
 
-	# Choice value
+    else:
+        # enforce choice lowercase for consistency
+        choice = choice.lower()
 
+    # Choice value
     if (choice != 'time') and (choice != 'accuracy'):
         raise ValueError("Choice must either be 'time' or 'accuracy'")
 
 	# Comparison Type
 
-    if type(comparison) != pd.core.frame.DataFrame:
+    elif type(comparison) != pd.core.frame.DataFrame:
         raise TypeError("Comparison must be of type pandas.core.frame.DataFrame")
 
 	# Comparison Value Rows
 
-    if comparison.shape[0] < 1:
+    elif comparison.shape[0] < 1:
         raise ValueError("Comparison must at least have 1 row")
 
 	# Comparison Value Columns
 
-    if comparison.shape[1]!= 7:
+    elif comparison.shape[1]!= 7:
         raise ValueError("Comparison must contain 7 columns (excluding index)")
 
     # Comparison Models Column Type
 
-    if all(isinstance(m, str) for m in comparison.iloc[:,0].tolist()) != True:
+    elif all(isinstance(m, str) for m in comparison.iloc[:,0].tolist()) != True:
         raise TypeError("Comparison Models column must only contain type string")
 
 	## Function
-    n_models = comparison.shape[0]
 
-    if choice == 'accuracy':
-        x = comparison.iloc[:,1]
-        y = comparison.iloc[:,2]
-        labels = ('Train Accuracy','Test Accuracy','Accuracy','Train and Test Accuracy by Model')
-    elif choice == 'time':
-        x = comparison.iloc[:,4]
-        y = comparison.iloc[:,5]
-        labels = ('Fit Time','Predict Time','Time (s)','Fit and Predict Time by Model')
 
-    fig, ax = plt.subplots()
+    else:
+        if choice == 'accuracy':
+            x = comparison.iloc[:,1]
+            y = comparison.iloc[:,2]
+            labels = ('Train Accuracy','Test Accuracy','Accuracy','Train and Test Accuracy by Model')
+        else:
+            x = comparison.iloc[:,4]
+            y = comparison.iloc[:,5]
+            labels = ('Fit Time','Predict Time','Time (s)','Fit and Predict Time by Model')
 
-    index = np.arange(n_models)
-    bar_width = 0.35
-    opacity = 0.4
+    
+        n_models = comparison.shape[0]
 
-    rects1 = ax.bar(index, x,bar_width,
+        fig, ax = plt.subplots()
+
+        index = np.arange(n_models)
+        bar_width = 0.35
+        opacity = 0.4
+
+        rects1 = ax.bar(index, x,bar_width,
                     alpha=opacity, color='b',
                     label=labels[0])
 
-    rects2 = ax.bar(index + bar_width, y, bar_width,
+        rects2 = ax.bar(index + bar_width, y, bar_width,
                     alpha=opacity, color='r',
                     label=labels[1])
 
-    ax.set_xticklabels(comparison.iloc[:,0])
-    ax.set_xlabel('Models')
-    ax.set_ylabel(labels[2])
-    ax.set_xticks(index + bar_width / 2)
-    ax.set_title(labels[3])
-    ax.legend()
+        ax.set_xticklabels(comparison.iloc[:,0])
+        ax.set_xlabel('Models')
+        ax.set_ylabel(labels[2])
+        ax.set_xticks(index + bar_width / 2)
+        ax.set_title(labels[3])
+        ax.legend()
 
-    fig.tight_layout()
+        fig.tight_layout()
 
-    plt.savefig('comparison.png', bbox_inches='tight')
+        plt.savefig('comparison.png', bbox_inches='tight')
