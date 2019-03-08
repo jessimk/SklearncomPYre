@@ -1,5 +1,6 @@
 # SklearncomPYre
 [![Build Status](https://travis-ci.com/jessimk/SklearncomPYre.svg?branch=master)](https://travis-ci.com/jessimk/SklearncomPYre)
+[![codecov](https://codecov.io/gh/jessimk/SklearncomPYre/branch/master/graph/badge.svg)](https://codecov.io/gh/jessimk/SklearncomPYre)
 
 | Contributor                  | Github              | CWL |
 | --------------------- |-----------------------|-----------------------|
