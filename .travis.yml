@@ -10,3 +10,5 @@ install:
   - pip install -U scikit-learn
 
 script: pytest
+coverage run -m --branch pytest -q SklearncomPYre/test/test_train_test_acc_time.py SklearncomPYre/test/test_split.py SklearncomPYre/test/test_comparison_viz.py
+codecov

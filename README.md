@@ -1,5 +1,10 @@
 # SklearncomPYre
+<<<<<<< HEAD
 [![Build Status](https://travis-ci.org/UBC-MDS/SklearncomPYre.svg?branch=master)](https://travis-ci.org/UBC-MDS/SklearncomPYre)
+=======
+[![Build Status](https://travis-ci.com/jessimk/SklearncomPYre.svg?branch=master)](https://travis-ci.com/jessimk/SklearncomPYre)
+[![codecov](https://codecov.io/gh/jessimk/SklearncomPYre/branch/master/graph/badge.svg)](https://codecov.io/gh/jessimk/SklearncomPYre)
+>>>>>>> 1940651bbb052f4830b0633d42338a799c479217
 
 | Contributor                  | Github              | CWL |
 | --------------------- |-----------------------|-----------------------|
