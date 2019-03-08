@@ -17,16 +17,50 @@ X = iris.data[:, [2, 3]]
 y = iris.target
 
 #testing that X and y are dataframes
-def test_type():
+def test_type1():
     with pytest.raises(TypeError):
-        SklearncomPYre.split(list(X),y,0.6,0.2,0.2)
+        SklearncomPYre.split(list(),y,0.6,0.2,0.2)
+
+def test_type2():
+    with pytest.raises(TypeError):
+        SklearncomPYre.split(X[0:2,:], y[0:1], 0.6,0.2,0.2)
+
+def test_type3():
+    with pytest.raises(TypeError):
         SklearncomPYre.split(X, 2, 0.6,0.2,0.2)
 
+def test_type4():
+    with pytest.raises(TypeError):
+        SklearncomPYre.split(2, y, 0.6,0.2,0.2)
+
+def test_type5():
+    with pytest.raises(TypeError):
+        SklearncomPYre.split(dict(), y, 0.6,0.2,0.2)
+
+def test_type6():
+    with pytest.raises(TypeError):
+        SklearncomPYre.split(list(2,2), list(2,2), 0.6,0.2,0.2)
+
+
 # test all inputs are given
-def test_inputs_given():
+def test_inputs_given1():
     with pytest.raises(TypeError):
         SklearncomPYre.split(X,0.6,0.2,0.2)
+
+# test all inputs are given
+def test_inputs_given2():
+    with pytest.raises(TypeError):
         SklearncomPYre.split(X,y,0.2,0.2)
+
+# test all inputs are given
+def test_inputs_given3():
+    with pytest.raises(TypeError):
+        SklearncomPYre.split(X,y)
+
+# test all inputs are given
+def test_inputs_given4():
+    with pytest.raises(TypeError):
+        SklearncomPYre.split(y,0.2,0.2, 0.6)
 
 #testing that output dimensions are match input dimensions
 def test_output_col_dimension():
