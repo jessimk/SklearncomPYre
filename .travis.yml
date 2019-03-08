@@ -6,6 +6,9 @@ install:
   - "pip install pandas"
   - "pip install matplotlib"
   - "pip install -U scikit-learn"
+  - "pip install coverage"
+  - "pip install codecov"
+  
 language: python
 python: 
   - "3.6"
