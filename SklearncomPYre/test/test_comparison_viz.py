@@ -28,8 +28,6 @@ def test_input_choice_value():
         comparison_viz(comparison=df, choice = 'model')
     except(ValueError):
         assert True
-    else:
-        assert False
 
 def test_input_choice_type():
     """
@@ -39,8 +37,6 @@ def test_input_choice_type():
         comparison_viz(comparison=df, choice=3)
     except(TypeError):
         assert True
-    else:
-        assert False
 
 
 def test_input_comparison_value():
@@ -51,8 +47,6 @@ def test_input_comparison_value():
         comparison_viz(comparison=df[['Models','Variance']], choice='time')
     except(ValueError):
         assert True
-    else:
-        assert False
 
 def test_input_comparison_type():
     """
@@ -62,8 +56,6 @@ def test_input_comparison_type():
         comparison_viz(comparison=3, choice='time')
     except(TypeError):
         assert True
-    else:
-        assert False
 
 def test_output_comparison_viz_time():
     """
