@@ -44,17 +44,6 @@ Created by</a></h5>
 <br>
 
 
-| Contributor                  | Github              | CWL |
-| --------------------- |-----------------------|-----------------------|
-| Birinder Singh | [birinder1469](https://github.com/Birinder1469) | bsingh02 |
-| Jes Simkin | [jessimk](https://github.com/jessimk) | jess354 |
-| Talha Siddiqui | [talhaadnan100](https://github.com/talhaadnan100) | talhaas |
-
-<br>
-A Python package facilitating beautifully efficient comparisons of machine learning classifiers and regression models.
-<br>
-
-
 ### Summary
 __SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">scikit-learn</a>, combining it with <a href="https://pandas.pydata.org/">pandas</a> dataframes and <a href="https://matplotlib.org/">matplotlib</a> plots for easy, breezy, and beautiful machine learning exploration.
 
