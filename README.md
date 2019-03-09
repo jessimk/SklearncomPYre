@@ -1,6 +1,6 @@
  <h5 align="center">
   <br>
-<img src="logo.png" alt="SklearncomPYre" width="200"></a>
+<img src="logo.png" alt="SklearncomPYre" width="250"></a>
 <br>
 </h5>
 
