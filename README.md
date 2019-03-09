@@ -178,6 +178,13 @@ comparison_viz(result, "accuracy")
 comparison_viz(result, 'time')
 
   ```
+### Credits
+
+* Function concepts inspired by [UBC MDS DSCI 573](https://ubc-mds.github.io/descriptions/) lab instructor [Varada Kolhatkar](https://kvarada.github.io/).
+* README formatting inspiration from  [ptoolkit](https://github.com/UBC-MDS/ptoolkit).
+* Badges by [Shields IO](https://shields.io/)
+* Logo designed at [Canva](https://www.canva.com/)
+
 
 ### Related
 
