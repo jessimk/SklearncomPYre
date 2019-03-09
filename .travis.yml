@@ -1,12 +1,18 @@
+--- 
+install: 
+  - "pip install git+https://github.com/UBC-MDS/SklearncomPYre.git"
+  - "pip install -U pytest"
+  - "pip install numpy"
+  - "pip install pandas"
+  - "pip install matplotlib"
+  - "pip install -U scikit-learn"
+  - "pip install coverage"
+  - "pip install codecov"
+  
 language: python
-python:
+python: 
   - "3.6"
-install:
-  - pip install git+https://github.com/UBC-MDS/SklearncomPYre.git
-  - pip install -U pytest
-  - pip install numpy
-  - pip install pandas
-  - pip install matplotlib
-  - pip install -U scikit-learn
-
-script: pytest
+script: 
+  - pytest
+  - "coverage run -m --branch pytest -q SklearncomPYre/test/test_train_test_acc_time.py SklearncomPYre/test/test_split.py SklearncomPYre/test/test_comparison_viz.py"
+  - codecov

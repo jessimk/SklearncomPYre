@@ -1,5 +1,5 @@
 # SklearncomPYre
-[![Build Status](https://travis-ci.org/UBC-MDS/SklearncomPYre.svg?branch=master)](https://travis-ci.org/UBC-MDS/SklearncomPYre)
+[![Build Status](https://travis-ci.org/UBC-MDS/SklearncomPYre.svg?branch=master)](https://travis-ci.org/UBC-MDS/SklearncomPYre) [![codecov](https://codecov.io/gh/UBC-MDS/SklearncomPYre/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/SklearncomPYre)
 
 | Contributor                  | Github              | CWL |
 | --------------------- |-----------------------|-----------------------|
