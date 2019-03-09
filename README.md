@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/UBC-MDS/SklearncomPYre.svg?branch=master)](https://travis-ci.org/UBC-MDS/SklearncomPYre) [![codecov](https://codecov.io/gh/UBC-MDS/SklearncomPYre/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/SklearncomPYre)
-
-<h5 align="center">
+ <h5 align="center">
   <br>
 <img src="logo.png" alt="SklearncomPYre" width="200"></a>
 <br>
@@ -13,15 +11,17 @@ Created by</a></h5>
 
 <h4 align="center">
 
-[Jes Simkin](https://github.com/jessimk) &nbsp;&middot;&nbsp;
 [Birinder Singh](https://github.com/Birinder1469) &nbsp;&middot;&nbsp;
+[Jes Simkin](https://github.com/jessimk) &nbsp;&middot;&nbsp;
 [Talha Siddiqui](https://github.com/talhaadnan100)
 </a></h4>
 
 <br>
 <h4 align="center">
 
-[![Travis](https://img.shields.io/travis/UBC-MDS/SklearncomPYre.svg?style=social)](https://github.com/UBC-MDS/SklearncomPYre)
+[![Build Status](https://travis-ci.org/UBC-MDS/SklearncomPYre.svg?branch=master)](https://travis-ci.org/UBC-MDS/SklearncomPYre)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![codecov](https://codecov.io/gh/UBC-MDS/SklearncomPYre/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/SklearncomPYre)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [![GitHub forks](https://img.shields.io/github/forks/UBC-MDS/SklearncomPYre.svg?style=social)](https://github.com/UBC-MDS/SklearncomPYre/network)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [![GitHub issues](https://img.shields.io/github/issues/UBC-MDS/SklearncomPYre.svg?style=social)](https://github.com/UBC-MDS/SklearncomPYre/issues)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -37,7 +37,8 @@ Created by</a></h5>
   <a href="#how-to-use">How To Use</a> &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
   <a href="#credits">Credits</a> &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
   <a href="#related">Related</a> &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
-  <a href="#license">License</a>
+  <a href="#license">License</a>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+  <a href="#contribute">Contribute</a>
 </h4>
 <h1></h1>
 
@@ -201,6 +202,8 @@ We are aware of a <a href="">new package</a>, `sklearn-pandas` that combines `sc
 ### License
 
 [MIT License](https://github.com/UBC-MDS/SklearncomPYre/blob/master/LICENSE)
+
+### Contribute
 
 Interested in contributing?
 See our [Contributing Guidelines](https://github.com/UBC-MDS/SklearncomPYre/blob/master/CONTRIBUTING.md) and [Code of Conduct](https://github.com/UBC-MDS/SklearncomPYre/blob/master/Conduct.md).
