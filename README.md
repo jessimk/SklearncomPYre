@@ -206,4 +206,4 @@ We are aware of a <a href="">new package</a>, `sklearn-pandas` that combines `sc
 ### Contribute
 
 Interested in contributing?
-See our [Contributing Guidelines](https://github.com/UBC-MDS/SklearncomPYre/blob/master/CONTRIBUTING.md) and [Code of Conduct](https://github.com/UBC-MDS/SklearncomPYre/blob/master/Conduct.md).
+See our [Contributing Guidelines](https://github.com/UBC-MDS/SklearncomPYre/blob/master/Contribution.md) and [Code of Conduct](https://github.com/UBC-MDS/SklearncomPYre/blob/master/CODE_OF_CONDUCT.md).
