@@ -1,89 +1,54 @@
-# SklearncomPYre
-[![Build Status](https://travis-ci.org/UBC-MDS/SklearncomPYre.svg?branch=master)](https://travis-ci.org/UBC-MDS/SklearncomPYre) [![codecov](https://codecov.io/gh/UBC-MDS/SklearncomPYre/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/SklearncomPYre)
+ <h5 align="center">
+  <br>
+<img src="logo.png" alt="SklearncomPYre" width="350"></a>
+<br>
+</h5>
 
-| Contributor                  | Github              | CWL |
-| --------------------- |-----------------------|-----------------------|
-| Birinder Singh | [birinder1469](https://github.com/Birinder1469) | bsingh02 |
-| Jes Simkin | [jessimk](https://github.com/jessimk) | jess354 |
-| Talha Siddiqui | [talhaadnan100](https://github.com/talhaadnan100) | talhaas |
+<h4 align="center">Facilitating beautifully efficient comparisons of machine learning classifiers and regression models</a>.</h4>
+
+<h5 align="center">
+Created by</a></h5>
+
+<h4 align="center">
+
+[Birinder Singh](https://github.com/Birinder1469) &nbsp;&middot;&nbsp;
+[Jes Simkin](https://github.com/jessimk) &nbsp;&middot;&nbsp;
+[Talha Siddiqui](https://github.com/talhaadnan100)
+</a></h4>
 
 <br>
-A Python package facilitating beautifully efficient comparisons of machine learning classifiers and regression models.
+<h4 align="center">
+
+[![Build Status](https://travis-ci.org/UBC-MDS/SklearncomPYre.svg?branch=master)](https://travis-ci.org/UBC-MDS/SklearncomPYre)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![codecov](https://codecov.io/gh/UBC-MDS/SklearncomPYre/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/SklearncomPYre)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![GitHub forks](https://img.shields.io/github/forks/UBC-MDS/SklearncomPYre.svg?style=social)](https://github.com/UBC-MDS/SklearncomPYre/network)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![GitHub issues](https://img.shields.io/github/issues/UBC-MDS/SklearncomPYre.svg?style=social)](https://github.com/UBC-MDS/SklearncomPYre/issues)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![GitHub stars](https://img.shields.io/github/stars/UBC-MDS/SklearncomPYre.svg?style=social)](https://github.com/UBC-MDS/SklearncomPYre/stargazers)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![GitHub license](https://img.shields.io/github/license/UBC-MDS/SklearncomPYre.svg?style=social)](https://github.com/UBC-MDS/SklearncomPYre/blob/master/LICENSE)
+</a></h4>
+
+
+<h1></h1>
+<h4 align="center">
+  <a href="#summary">Summary</a> &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+  <a href="#install">Install</a> &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+  <a href="#how-to-use">How To Use</a> &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+  <a href="#credits">Credits</a> &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+  <a href="#related">Related</a> &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+  <a href="#license">License</a>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+  <a href="#contribute">Contribute</a>
+</h4>
+<h1></h1>
+
 <br>
 
-
-### Dependencies
-- `Python==3.6.8`
-- `matplotlib==3.0.1`
-- `numpy==1.15.4`
-- `pandas==0.20.3`
-- `scikit-learn==0.20.2`
-- `scipy==1.2.0`
-
-
-### Installation & Usage
-
-Pleas use the following command to install the package. : <br>
-`pip install git+https://github.com/UBC-MDS/SklearncomPYre.git`
-
-Once installed, load the package using following commands :
-
-`from SklearncomPYre.train_test_acc_time import train_test_acc_time` <br>
-`from SklearncomPYre.comparison_viz import comparison_viz` <br>
-`from SklearncomPYre.split import split`<br>
-
-Here is an example of how you can use SklearncomPYre:
-
-```
-# Example usage
-
-# Import libraries
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_model import LogisticRegression
-
-# Importing SklearncomPYre
-from SklearncomPYre.train_test_acc_time import train_test_acc_time
-from SklearncomPYre.comparison_viz import comparison_viz
-from SklearncomPYre.split import split
-
-# Loading the handy iris dataset
-from sklearn.datasets import load_iris
-
-iris = load_iris()
-X = iris.data[:, [2, 3]]
-y = iris.target
-
-# Setting up a dictionary of classifiers to test
-
-dictionary = {
-    'knn': KNeighborsClassifier(),
-    'LogRegression':LogisticRegression() ,
-    'RForest': RandomForestClassifier()}
-
-# Let's start by using the SklearncomPYre function split().
-
-# Splitting up datasets into 40% training, 20% vaildation, and 40% tests sets.
-
-X_train, y_train, X_val, y_val, X_train_val, y_train_val, X_test, y_test = split(X,y,0.4,0.2,0.4)
-
-#Now, let's train some models and compare them in a pandas dataframe by using train_test_acc_time().
-
-result = train_test_acc_time(dictionary,X_train,y_train,X_val,y_val)
-result
-
-# Next, let's take a look at some some plots with comparison_viz()
-
-#Our plots will be saved to the working directory.
-
-comparison_viz(result, "accuracy")
-comparison_viz(result, 'time')
-
-  ```
 
 ### Summary
-__SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">scikit-learn</a>, combining it with <a href="https://pandas.pydata.org/">pandas</a> dataframes and <a href="https://matplotlib.org/">matplotlib</a> plots for easy, breezy, and beautiful machine learning exploration.  
+__SklearncomPYre__ harnesses the power of <a href="https://scikit-learn.org/">scikit-learn</a>, combining it with <a href="https://pandas.pydata.org/">pandas</a> dataframes and <a href="https://matplotlib.org/">matplotlib</a> plots for easy, breezy, and beautiful machine learning exploration.
+
+*Looking to do the same in R? Check out [caretcompaR](https://github.com/UBC-MDS/caretcompaR)!*
 
 #### <a href= "https://github.com/UBC-MDS/SklearncomPYre/blob/master/SklearncomPYre/split.py">Function 1:</a> `split()`
 
@@ -144,7 +109,87 @@ Outputs a beautiful <a href="https://matplotlib.org">matplotlib</a> bar chart co
 
   - Bar chart of accuracies or time comparison by models saved to root directory. Type: `png`
 
-### Where does this package fit in?
+### Install
+
+Pleas use the following command to install the package. : <br>
+`pip install git+https://github.com/UBC-MDS/SklearncomPYre.git`
+
+Once installed, load the package using following commands :
+
+`from SklearncomPYre.train_test_acc_time import train_test_acc_time` <br>
+`from SklearncomPYre.comparison_viz import comparison_viz` <br>
+`from SklearncomPYre.split import split`<br>
+
+#### Dependencies
+- `Python==3.6.8`
+- `matplotlib==3.0.1`
+- `numpy==1.15.4`
+- `pandas==0.20.3`
+- `scikit-learn==0.20.2`
+- `scipy==1.2.0`
+
+### How To Use
+
+Here is an example of how you can use SklearncomPYre:
+
+```
+# Example usage
+
+# Import libraries
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+
+# Importing SklearncomPYre
+from SklearncomPYre.train_test_acc_time import train_test_acc_time
+from SklearncomPYre.comparison_viz import comparison_viz
+from SklearncomPYre.split import split
+
+# Loading the handy iris dataset
+from sklearn.datasets import load_iris
+
+iris = load_iris()
+X = iris.data[:, [2, 3]]
+y = iris.target
+
+# Setting up a dictionary of classifiers to test
+
+dictionary = {
+    'knn': KNeighborsClassifier(),
+    'LogRegression':LogisticRegression() ,
+    'RForest': RandomForestClassifier()}
+
+# Let's start by using the SklearncomPYre function split().
+
+# Splitting up datasets into 40% training, 20% vaildation, and 40% tests sets.
+
+X_train, y_train, X_val, y_val, X_train_val, y_train_val, X_test, y_test = split(X,y,0.4,0.2,0.4)
+
+#Now, let's train some models and compare them in a pandas dataframe by using train_test_acc_time().
+
+result = train_test_acc_time(dictionary,X_train,y_train,X_val,y_val)
+result
+
+# Next, let's take a look at some some plots with comparison_viz()
+
+#Our plots will be saved to the working directory.
+
+comparison_viz(result, "accuracy")
+comparison_viz(result, 'time')
+
+  ```
+### Credits
+
+* Function concepts inspired by [UBC MDS DSCI 573](https://ubc-mds.github.io/descriptions/) lab instructor [Varada Kolhatkar](https://kvarada.github.io/).
+* README formatting inspiration from  [ptoolkit](https://github.com/UBC-MDS/ptoolkit).
+* Badges by [Shields IO](https://shields.io/)
+* Logo designed at [Canva](https://www.canva.com/)
+
+
+### Related
+
+#### Where does this package fit in?
 
 This package provides functions to help make the early stages of model selection and exploration easier to cycle through and meaningfully compare.
 
@@ -154,9 +199,11 @@ We are not currently aware of any packages that combine `sci-kit learn` and `pan
 
 We are aware of a <a href="">new package</a>, `sklearn-pandas` that combines `sci-kit learn` and `pandas` powers but this new package is tailored towards providing full-cycle machine learning functionality (feature selection, transformations, inputting/outputting pandas dataframes, etc.) rather than focusing facilitating model-to-model comparisons via dataframes.
 
+### License
 
-### Branch Coverage
+[MIT License](https://github.com/UBC-MDS/SklearncomPYre/blob/master/LICENSE)
 
-The branch coverage results are as follows :
+### Contribute
 
-![branch_coverage](branch_coverage.PNG)
+Interested in contributing?
+See our [Contributing Guidelines](https://github.com/UBC-MDS/SklearncomPYre/blob/master/CONTRIBUTING.md) and [Code of Conduct](https://github.com/UBC-MDS/SklearncomPYre/blob/master/Conduct.md).
